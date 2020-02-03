@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./css/rain.css" />
+    </head>
+    <body>
+        <div class="content">
+            <div class="rain"></div>
+        </div>
+    </body>
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"
+    ></script>
+    <script>
+        let $content = $('.content')
+        let initNumber = 0
+        for (let i = 0; i < 30; i++) {
+            let lefts = Math.floor(Math.random() * 5 + 2)
+            let delay = Math.floor(Math.random() * 5 + 2) / 10
+            initNumber += lefts
+            let $div = $('<div/>')
+                .addClass('rain')
+                .css({
+                    left: `${initNumber}%`,
+                    top: `${lefts}%`,
+                    'animation-delay': `${delay}s`
+                })
+                .on('click', () => {
+                    console.log('open a redpacket')
+                })
+            $content.append($div)
+        }
+    </script>
+</html>

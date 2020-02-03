@@ -1,0 +1,27 @@
+.loading {
+    width: 640px;
+    height: 640px;
+    background: url(../image/timg.jpg) no-repeat;
+    border-radius: 50%;
+    animation: round 1s steps(12) infinite;
+
+}
+
+@keyframes round {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.runningman {
+    height: 137px;
+    width: 115px;
+    background: url(../image/runningman.png) no-repeat;
+    animation: run .5s steps(8) infinite;
+}
+
+@keyframes run {
+    100% {
+        background-position-x: -920px;
+    }
+}
